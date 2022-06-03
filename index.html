@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ananda Francis Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/scrolling-nav.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script>
+    $(window).load(function () {
+      $('.bg_load').fadeOut(10000);
+      $('.wrapper').fadeOut(5000);
+    });
+  </script>
+
+  <script>
+    var vid = document.getElementById('bgvid');
+    var pauseButton = document.querySelector('#polina button');
+
+    function vidFade() {
+      vid.classList.add('stopfade');
+    }
+
+    vid.addEventListener('ended', function () {
+      // only functional if "loop" is removed
+      vid.pause();
+
+      // to capture IE10
+      vidFade();
+    });
+
+    pauseButton.addEventListener('click', function () {
+      vid.classList.toggle('stopfade');
+      if (vid.paused) {
+        vid.play();
+        pauseButton.innerHTML = 'Pause';
+      } else {
+        vid.pause();
+        pauseButton.innerHTML = 'Paused';
+      }
+    });
+
+  </script>
+
+</head>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+  }
+
+  video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+  }
+
+  .stopfade {
+    opacity: .5;
+  }
+
+  #polina {
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 2rem;
+    width: 33%;
+    margin: 2rem;
+    float: right;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-transform: lowercase;
+    margin-top: 0;
+    letter-spacing: .3rem;
+  }
+
+  #polina button {
+    display: block;
+    width: 80%;
+    padding: .4rem;
+    border: none;
+    margin: 1rem auto;
+    font-size: 1.3rem;
+    background: rgba(255, 255, 255, 0.23);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s background;
+  }
+
+  #polina button:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    /*background: rgba(0, 0, 0, 0.5);*/
+    padding: .5rem;
+    transition: .6s background;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+/*
+  @media screen and (max-width: 500px) {
+    div {
+      width: 70%;
+    }
+  }
+*/
+
+  @media screen and (max-device-width: 800px) {
+    html {
+      background: url(Meeting.png) #000 no-repeat center center fixed;
+    }
+    #bgvid {
+      display: none;
+    }
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Racing+Sans+One);
+  body {
+    background: #EEE;
+  }
+
+  .bg_load {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #3c3c3c;
+  }
+
+  .wrapper {
+    /* Size and position */
+    font-size: 25px;
+    /* 1em */
+    width: 8em;
+    height: 8em;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    /* Styles */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1em dashed rgba(138, 189, 195, 0.5);
+    box-shadow: inset 0 0 2em rgba(255, 255, 255, 0.3), 0 0 0 0.7em rgba(255, 255, 255, 0.3);
+    animation: rota 3.5s linear infinite;
+    /* Font styles */
+    font-family: 'Racing Sans One', sans-serif;
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 .04em rgba(255, 255, 255, 0.9);
+    line-height: 6em;
+  }
+
+  .wrapper:before,
+  .wrapper:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: inset 0 0 2em rgba(255, 255, 255, 0.3);
+    border: 1em dashed;
+  }
+
+  .wrapper:before {
+    border-color: rgba(138, 189, 195, 0.2);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .wrapper:after {
+    border-color: rgba(138, 189, 195, 0.4);
+    top: 1em;
+    right: 1em;
+    bottom: 1em;
+    left: 1em;
+  }
+
+  .wrapper .inner {
+    width: 100%;
+    height: 100%;
+    animation: rota 3.5s linear reverse infinite;
+  }
+
+  .wrapper span {
+    display: inline-block;
+    animation: placeholder 1.5s ease-out infinite;
+  }
+
+  .wrapper span:nth-child(1) {
+    animation-name: loading-1;
+  }
+
+  .wrapper span:nth-child(2) {
+    animation-name: loading-2;
+  }
+
+  .wrapper span:nth-child(3) {
+    animation-name: loading-3;
+  }
+
+  .wrapper span:nth-child(4) {
+    animation-name: loading-4;
+  }
+
+  .wrapper span:nth-child(5) {
+    animation-name: loading-5;
+  }
+
+  .wrapper span:nth-child(6) {
+    animation-name: loading-6;
+  }
+
+  .wrapper span:nth-child(7) {
+    animation-name: loading-7;
+  }
+
+  @keyframes rota {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes loading-1 {
+    14.28% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-2 {
+    28.57% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-3 {
+    42.86% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-4 {
+    57.14% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-5 {
+    71.43% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-6 {
+    85.71% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-7 {
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+  /*body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #555;
+  }*/
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6,
+  a {
+    margin-top: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    /*text-shadow: 2px 2px gray;*/
+    color: #333;
+  }
+  /*
+ * Override Bootstrap's default container.
+ */
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /*
+ * Masthead for nav
+ */
+
+  .blog-masthead {
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+  }
+  /* Nav links */
+
+  .blog-nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500;
+    color: #cdddeb;
+  }
+
+  .blog-nav-item:hover,
+  .blog-nav-item:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+  /* Active state gets a caret at the bottom */
+
+  .blog-nav .active {
+    color: #fff;
+  }
+
+  .blog-nav .active:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid;
+    border-left: 5px solid transparent;
+  }
+  /*
+ * Blog name and description
+ */
+
+  .blog-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 45px;
+    font-weight: normal;
+  }
+
+  .blog-description {
+    font-size: 20px;
+    color: #999;
+  }
+  /*
+ * Main column and sidebar layout
+ */
+
+  .blog-main {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  
+  /* Pagination */
+
+  .pager {
+    margin-bottom: 60px;
+    text-align: left;
+  }
+
+  .pager > li > a {
+    width: 140px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 30px;
+  }
+  /*
+ * Blog posts
+ */
+
+  .blog-post {
+    margin-bottom: 60px;
+  }
+
+  .blog-post-title {
+    margin-bottom: 5px;
+    font-size: 40px;
+  }
+
+  .blog-post-meta {
+    margin-bottom: 20px;
+    color: #999;
+  }
+  /*
+ * Footer
+ */
+
+  .blog-footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+
+  /*
+  *:hover {
+  cursor: none !important;
+}*/
+
+  @keyframes example {
+    0% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+    }
+    25% {
+      background-color: yellow;
+      left: -150px;
+      top: 0px;
+    }
+    50% {
+      background-color: blue;
+      left: -150px;
+      top: -150px;
+    }
+    75% {
+      background-color: green;
+      left: 0px;
+      top: -150px;
+    }
+    100% {
+      background-color: gray;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
+  /*p{
+    text-shadow: 2px 2px gray;
+  }*/
+
+</style>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <video autoplay poster="background.jpg" id="bgvid" loop>
+    <source src="Meeting.mp4" type="video/mp4">
+  </video>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+              <a class="page-scroll" href="#page-top"></a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#about">About</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#skills">Skills</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#technical">Technical</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#projects">Projects</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#experience">Experience</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#education">Education</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="profile" class="intro-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="blog-header">
+              <h1 class="blog-title">Ananda Francis</h1>
+              <p class="lead blog-description">Data Scientist | Nonprofit Founder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ">
+            <div class="blog-post">
+              <h2 class="blog-post-title">about me</h2>
+              
+              <blockquote>
+                <p>
+                  My experiences range from social media marketer, content creator, nonprofit founder and CEO, data scientist, pianist, public speaker, creative writer, independent researcher, informal educator, education equity advocate, political intern, junior investment analyst and more; though data science, research and community building will always be my biggest passions. </p>
+              </blockquote>
+              <hr id="skills">
+
+            </div>
+            <!-- /.blog-post -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 blog-main">
+          <div class="blog-post">
+            <h2 class="blog-post-title">Skills</h2>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <!-- <th>#</th> -->
+                  <th>
+                    <h4>Machine Learning</h4></th>
+                  <th>
+                    <h4>Data Analysis & Collection</h4></th>
+                  <th>
+                    <h4>Business & Communications</h4></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- <th scope="row">1</th> -->
+                  <td>
+                    <ul>
+                      <li>Predictive Analysis</li>
+                      <li>Data Clustering</li>
+                      <li>K-Means Clustering</li>
+                      <li>Scikit-Learn</li>
+                      <li>Decision Tree</li>
+                      <li>Random Forest</li>
+                      <li>Supervised/Unsupervised Learning</li>
+                      <li>K-Nearest Neighbor</li>
+                      <li>Recommender Systems</li>
+                    </ul>
+                  </td>
+                  <td>
+                    </ul>
+                      <li>API</li>
+                      <li>Web Scraping</li>
+                      <li>Applied Statistics</li>
+                      <li>Bioinformatics</li>
+                      <li>Quantitative Analysis</li>
+                      <li>Database Queries</li>
+                      <li>Data Modeling</li>
+                      <li>Dashboard</li>
+                      <li>Data Visualization</li>
+                      <li>Data Storytelling</li>
+                      <li>Data Manipulation</li>
+                      <li>Data Munging</li>
+                      <li>Pandas</li>
+                      <li>Natural Language Processing</li>
+                    </ul>
+                  </td>
+                  <td> 
+                    </ul>
+                      <li>Business Development</li>
+                      <li>Creative Problem Solving</li>
+                      <li>Public Speaking</li>
+                      <li>Instagram Marketing</li>
+                      <li>Brand Ambassador</li>
+                      <li>Email Marketing</li>
+                      <li>Newsletters</li>
+                      <li>Project Management</li>
+                      <li>Photo and Video Editing</li>
+                      <li>Interviewing</li>
+                      <li>Canvas</li>
+                      <li>Photoshop</li>
+                      <li>Creative Writing</li>
+                      <li>Fast Typist: 80 wpm</li>
+                    </ul>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+            <hr id="technical">
+          </div>
+
+          <!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Technical Skills & Coursework</h2>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td>Python</td>
+                  <td>SQL</td>
+                  <td>Jupyter Notebook</td>
+                  <td>Git</td>
+                </tr>
+
+                <tr>
+                  <td>Github</td>
+                  <td>Wordpress</td>
+                  <td>Discrete Math</td>
+                  <td>Linear Algebra</td>
+                </tr>
+
+                <tr>
+                  <td>Advanced Programming with Data</td>
+                  <td>Foundations of Data Science</td>
+                  <td>Calculus 2</td>
+                  <td>Database Design</td>
+                </tr>
+
+                <tr>
+                  <td>HTML</td>
+                  <td>Javascript</td>
+                </tr>
+
+              </tbody>
+            </table>
+            <hr id="projects">
+          </div>
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Projects</h2>
+            		<br>
+                <br>
+            <blockquote>
+              <h3><a href="https://github.com/anandafrancis/brain-image-machine-learning">Brain Image Machine Learning</a></h3>
+              <p>Built over 10,000 unique algorithms to analyze what type of classifier, brain parcellation and priming 
+                condition can most accurately predict the emotion state of a test subject using brain image data, fMRI images, 
+                of 30 subjects from Northeastern’s Affective and Brain Science Lab.</p>
+            </blockquote>
+            <hr>
+             
+            <blockquote>
+              <h3><a href="https://crime-data-dashboard.herokuapp.com/">Crime Data Dashboard</a></h3>
+              <p>Built a dashboard and reusable library showing geospatial models, time series animations, sankey diagrams and 
+                other charts to visualize and conduct data analysis for crimes in Boston from 2015 to present. </p>
+
+            </blockquote>
+            <hr>
+            
+            <blockquote>
+              <h3><a href="https://github.com/anandafrancis/nlp-library-bible-analysis/">Natural Language Processing and Analysis of the Bible</a></h3>
+              <p>Built reusable library to analyze the Bible and create visualizations using NLP tools.</p>
+            </blockquote>
+            <hr>
+
+            <blockquote>
+              <h3><a href="https://github.com/anandafrancis/job-posting-analysis">Job Board Analysis and Recommendations</a></h3>
+              <p>Used NLP tools, APIs and machine learning to predict what job an applicant should apply to based on the 
+                skills present in their resume and created visualizations to understand skill frequency in job postings.</p>
+            </blockquote>
+            <hr>
+
+            <blockquote>
+              <h3><a href="https://github.com/anandafrancis/hate-crimes">Hate Crimes in 2016 vs 2017</a></h3>
+              <p>Explored different economic, social, cultural, and political factors' 
+                correlation to reported hate crime rates to better understand what types of environments prevent vs 
+                provoke hate crimes and how we can better understand the offenders and victims of hate crimes.</p>
+            </blockquote>
+            <hr>
+
+
+            <hr id="experience">
+          </div>
+
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Work Experience</h2>
+            		<br>
+                <br>
+            <blockquote>
+              <small class="pull-right">Apr 2020 - Present</small>
+              <h3>Black Excellence Pipeline</h3>
+              <h4><span style="font-style: italic;">Founder & Chairman</span></h4>
+              </ul>
+              <li>Manage Board to establish 501(c)3 status, draft by-laws and establish partnerships with organizations</li>
+              <li>Head human resource efforts: recruit staff & registered BEP members; build Instagram following of 1000+</li>
+              <li>Collaborate and conduct outreach to tech partners to develop BEP mobile app and web solutions</li>
+              <li>Develop https://bethepipeline.org  (currently down, re-launch soon) using Wordpress</li>
+              </ul>
+
+            </blockquote>
+            <hr>
+             
+            <blockquote>
+              <small class="pull-right">Aug 2021 - Present</small>
+              <h3>Northeastern Office of the Chancellor</h3>
+              <h4><span style="font-style: italic;">Student Success Guide</span></h4>
+              </ul>
+              <li>Provide navigation support to over 100 first year students to help them utilize resources based on their needs</li>
+              <li>Keep an organized, up-to-date documentation log of all interactions with students</li>
+              <li>Serve as mentor and team leader to incoming Student Success Guides</li>
+              <li>Collaborate with App Development Team as a well-informed consultant and product user</li>
+              </ul>
+
+            </blockquote>
+            <hr>
+            
+            <blockquote>
+              <small class="pull-right">Jan 2022 - Present</small>
+              <h3>Northeastern University Education Services</h3>
+              <h4><span style="font-style: italic;">Peer Tutor</span></h4>
+              </ul> 
+              <li>Provide informal instruction to 3 students 5 hours a week in Python for neuroscience, 
+                psychology and STEM related assignments </li>
+              </ul>
+            </blockquote>
+            <hr>
+
+            <blockquote>
+              <small class="pull-right">Sept 2021 - Jan 2022</small>
+              <h3>Northeastern Khoury College of Computer Sciences</h3>
+              <h4><span style="font-style: italic;">Student Content Creator</span></h4>
+              </ul>
+              <li>Create social media content for events through polls, IG stories, live streams, IG Reels and IG TV series</li>
+              <li>Develop evidence based social media strategy to boost engagement and pitch ideas to marketing team</li>
+              </ul>
+
+            </blockquote>
+            <hr>
+
+            <br>
+
+
+            <blockquote>
+              <small class="pull-right">Oct 2021 - Jan 2022</small>
+              <h3>Northeastern SunnyLand Lab</h3>
+              <h4><span style="font-style: italic;">Writer & Data Scientist</span></h4>
+              </ul>
+              <li>Develop https://sunnyland.sites.northeastern.edu/ using Wordpress and Divi editor</li>
+              <li>Leverage Python libraries and mySQL database to manage and manipulate data from staff research</li>
+              <li>Web scraped research papers to create WordBlob visualization</li>
+              </ul>
+
+            </blockquote>
+            <hr>
+
+            <br>
+
+            <blockquote>
+              <small class="pull-right">Sept 2020 - Mar 2021</small>
+              <h3>Center of Health Policy and Law, Northeastern School of Law</h3>
+              <h4><span style="font-style: italic;">Communications Intern</span></h4>
+              </ul>
+              <li>Produced Center for Health Policy and Law's Fall 2020 Newsletter highlighting associated faculty and fellows research and publications, and Center's news and events for over 500 contacts</li>
+              <li>Expanded exposure of associated faculty and fellow's research, events, publications, and appearances through advertisement on the Twitter account by creating over 30 infographics </li>
+              </ul>
+
+            </blockquote>
+            <hr>
+
+            
+
+            <hr id="education">
+          </div>
+
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Education & Extracurriculars</h2>
+            <br>
+
+            <medium class="pull-right"> Sept 2020 - May 2024</medium>
+            <h3>Northeastern University</h3>
+            <medium class="pull-right"> GPA: 3.7</medium>
+            <p>B.S. Data Science</p>
+            <p>Honors: Ujima Global Leaders Scholars Program</p>
+            <br>
+
+            <medium class="pull-right"> Jan 2021 - May 2021</medium>
+            <h3>Google Computer Science Research Mentorship Program</h3>
+            <p> Googler-to-student mentorship program that connects students with Googler in field of interest 
+              (Health & Bioscience) to discuss pursuit of CS research careers, define a research question and begin 
+              the process of pursuing undergraduate research.
+            </p>
+            <br>
+
+            <medium class="pull-right"> Jan 2021 - May 2021</medium>
+            <h3>NUImpact: Northeastern’s Student-Led Impact Investing Fund</h3>
+            <p><span style="font-style: italic;">Junior Investment Analyst</span></p>
+            <p>Prospect, source, and conduct due diligence on potential investments within Education and Financial 
+              Services Industry through phone interviews with local entrepreneurs and community leaders.
+            </p>
+            <hr>
+
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="blog-footer">
+      <p>Ananda Francis &mdash;<a href="mailto:francis.ana@northeastern.edu">francis.ana@northeastern.edu</a>&mdash;
+        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
+        <script type="IN/Share" data-url="https://www.linkedin.com/in/anandamour" data-counter="right"></script>
+        <!--<a href="http://www.linkedin.com/shareArticle?mini=true&url=YOUR-URL&title=YOUR-TITLE&summary=YOUR-SUMMARY">LinkedIn</a>-->
+      </p>
+      <p>
+        <a href="#page-top">Back to top</a>
+      </p>
+    </footer>
+    <div class="bg_load"></div>
+    <div class="wrapper">
+        <div class="inner">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+        </div>
+    </div>
+
+</body>
+</html>
