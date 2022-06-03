@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ananda Francis Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/scrolling-nav.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script>
+    $(window).load(function () {
+      $('.bg_load').fadeOut(10000);
+      $('.wrapper').fadeOut(5000);
+    });
+  </script>
+
+  <script>
+    var vid = document.getElementById('bgvid');
+    var pauseButton = document.querySelector('#polina button');
+
+    function vidFade() {
+      vid.classList.add('stopfade');
+    }
+
+    vid.addEventListener('ended', function () {
+      // only functional if "loop" is removed
+      vid.pause();
+
+      // to capture IE10
+      vidFade();
+    });
+
+    pauseButton.addEventListener('click', function () {
+      vid.classList.toggle('stopfade');
+      if (vid.paused) {
+        vid.play();
+        pauseButton.innerHTML = 'Pause';
+      } else {
+        vid.pause();
+        pauseButton.innerHTML = 'Paused';
+      }
+    });
+
+  </script>
+
+</head>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+  }
+
+  video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+  }
+
+  .stopfade {
+    opacity: .5;
+  }
+
+  #polina {
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 2rem;
+    width: 33%;
+    margin: 2rem;
+    float: right;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    letter-spacing: .3rem;
+  }
+
+  #polina button {
+    display: block;
+    width: 80%;
+    padding: .4rem;
+    border: none;
+    margin: 1rem auto;
+    font-size: 1.3rem;
+    background: rgba(255, 255, 255, 0.23);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s background;
+  }
+
+  #polina button:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    /*background: rgba(0, 0, 0, 0.5);*/
+    padding: .5rem;
+    transition: .6s background;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+/*
+  @media screen and (max-width: 500px) {
+    div {
+      width: 70%;
+    }
+  }
+*/
+
+  @media screen and (max-device-width: 800px) {
+    html {
+      background: url(Meeting.png) #000 no-repeat center center fixed;
+    }
+    #bgvid {
+      display: none;
+    }
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Racing+Sans+One);
+  body {
+    background: #EEE;
+  }
+
+  .bg_load {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #3c3c3c;
+  }
+
+  .wrapper {
+    /* Size and position */
+    font-size: 25px;
+    /* 1em */
+    width: 8em;
+    height: 8em;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    /* Styles */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1em dashed rgba(138, 189, 195, 0.5);
+    box-shadow: inset 0 0 2em rgba(255, 255, 255, 0.3), 0 0 0 0.7em rgba(255, 255, 255, 0.3);
+    animation: rota 3.5s linear infinite;
+    /* Font styles */
+    font-family: 'Racing Sans One', sans-serif;
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 .04em rgba(255, 255, 255, 0.9);
+    line-height: 6em;
+  }
+
+  .wrapper:before,
+  .wrapper:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: inset 0 0 2em rgba(255, 255, 255, 0.3);
+    border: 1em dashed;
+  }
+
+  .wrapper:before {
+    border-color: rgba(138, 189, 195, 0.2);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .wrapper:after {
+    border-color: rgba(138, 189, 195, 0.4);
+    top: 1em;
+    right: 1em;
+    bottom: 1em;
+    left: 1em;
+  }
+
+  .wrapper .inner {
+    width: 100%;
+    height: 100%;
+    animation: rota 3.5s linear reverse infinite;
+  }
+
+  .wrapper span {
+    display: inline-block;
+    animation: placeholder 1.5s ease-out infinite;
+  }
+
+  .wrapper span:nth-child(1) {
+    animation-name: loading-1;
+  }
+
+  .wrapper span:nth-child(2) {
+    animation-name: loading-2;
+  }
+
+  .wrapper span:nth-child(3) {
+    animation-name: loading-3;
+  }
+
+  .wrapper span:nth-child(4) {
+    animation-name: loading-4;
+  }
+
+  .wrapper span:nth-child(5) {
+    animation-name: loading-5;
+  }
+
+  .wrapper span:nth-child(6) {
+    animation-name: loading-6;
+  }
+
+  .wrapper span:nth-child(7) {
+    animation-name: loading-7;
+  }
+
+  @keyframes rota {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes loading-1 {
+    14.28% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-2 {
+    28.57% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-3 {
+    42.86% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-4 {
+    57.14% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-5 {
+    71.43% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-6 {
+    85.71% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes loading-7 {
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+  /*body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #555;
+  }*/
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6,
+  a {
+    margin-top: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    /*text-shadow: 2px 2px gray;*/
+    color: #333;
+  }
+  /*
+ * Override Bootstrap's default container.
+ */
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /*
+ * Masthead for nav
+ */
+
+  .blog-masthead {
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+  }
+  /* Nav links */
+
+  .blog-nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500;
+    color: #cdddeb;
+  }
+
+  .blog-nav-item:hover,
+  .blog-nav-item:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+  /* Active state gets a caret at the bottom */
+
+  .blog-nav .active {
+    color: #fff;
+  }
+
+  .blog-nav .active:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid;
+    border-left: 5px solid transparent;
+  }
+  /*
+ * Blog name and description
+ */
+
+  .blog-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 45px;
+    font-weight: normal;
+  }
+
+  .blog-description {
+    font-size: 20px;
+    color: #999;
+  }
+  /*
+ * Main column and sidebar layout
+ */
+
+  .blog-main {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  
+  /* Pagination */
+
+  .pager {
+    margin-bottom: 60px;
+    text-align: left;
+  }
+
+  .pager > li > a {
+    width: 140px;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 30px;
+  }
+  /*
+ * Blog posts
+ */
+
+  .blog-post {
+    margin-bottom: 60px;
+  }
+
+  .blog-post-title {
+    margin-bottom: 5px;
+    font-size: 40px;
+  }
+
+  .blog-post-meta {
+    margin-bottom: 20px;
+    color: #999;
+  }
+  /*
+ * Footer
+ */
+
+  .blog-footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+
+  /*
+  *:hover {
+  cursor: none !important;
+}*/
+
+  @keyframes example {
+    0% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+    }
+    25% {
+      background-color: yellow;
+      left: -150px;
+      top: 0px;
+    }
+    50% {
+      background-color: blue;
+      left: -150px;
+      top: -150px;
+    }
+    75% {
+      background-color: green;
+      left: 0px;
+      top: -150px;
+    }
+    100% {
+      background-color: gray;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
+  /*p{
+    text-shadow: 2px 2px gray;
+  }*/
+
+</style>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <video autoplay poster="background.jpg" id="bgvid" loop>
+    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+    <source src="Meeting.mp4" type="video/mp4">
+    <!-- <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/webm"> -->
+  </video>
+  <!-- <div id="polina">
+    <h1>ANTOINE</h1>
+    <p>filmed by Alexander Wagner 2011
+      <p><a href="//demosthenes.info/blog/777/Create-Fullscreen-HTML5-Page-Background-Video">original article</a>
+        <p>Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change.</p>
+        <button>Pause</button>
+  </div> -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+              <a class="page-scroll" href="#page-top"></a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#about">Profile</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#skills">Skills</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#technical">Technical</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#experience">Experience</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#education">Education</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="profile" class="intro-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="blog-header">
+              <h1 class="blog-title">Ananda Francis</h1>
+              <p class="lead blog-description">Data Scientist | Nonprofit Founder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ">
+            <div class="blog-post">
+              <h2 class="blog-post-title">about me</h2>
+              
+              <blockquote>
+                <p>
+                  My experiences range from social media marketer, content creator, nonprofit founder and CEO, data scientist, pianist, public speaker, creative writer, independent researcher, informal educator, education equity advocate, political intern, junior investment analyst and more; though data science, research and community building will always be my biggest passions. </p>
+              </blockquote>
+              <hr id="skills">
+
+            </div>
+            <!-- /.blog-post -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 blog-main">
+          <div class="blog-post">
+            <h2 class="blog-post-title">Skills</h2>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <!-- <th>#</th> -->
+                  <th>
+                    <h4>Machine Learning</h4></th>
+                  <th>
+                    <h4>Data Analysis & Collection</h4></th>
+                  <th>
+                    <h4>Business & Communications</h4></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- <th scope="row">1</th> -->
+                  <td>
+                    <ul>
+                      <li>Predictive Analysis</li>
+                      <li>Data Clustering</li>
+                      <li>K-Means Clustering</li>
+                      <li>Scikit-Learn</li>
+                      <li>Decision Tree</li>
+                      <li>Random Forest</li>
+                      <li>Supervised/Unsupervised Learning</li>
+                      <li>K-Nearest Neighbor</li>
+                      <li>Recommender Systems</li>
+                    </ul>
+                  </td>
+                  <td>
+                    </ul>
+                      <li>API</li>
+                      <li>Web Scraping</li>
+                      <li>Applied Statistics</li>
+                      <li>Discret Math</li>
+                      <li>Linear Algebra</li>
+                      <li>Bioinformatics</li>
+                      <li>Quantitative Analysis</li>
+                      <li>Database Queries</li>
+                      <li>Data Modeling</li>
+                      <li>Dashboard</li>
+                      <li>Data Visualization</li>
+                      <li>Data Storytelling</li>
+                      <li>Data Manipulation</li>
+                      <li>Data Munging</li>
+                      <li>Pandas</li>
+                    </ul>
+                  </td>
+                  <td> 
+                    </ul>
+                      <li>Business Development</li>
+                      <li>Creative Problem Solving</li>
+                      <li>Public Speaking</li>
+                      <li>Instagram Marketing</li>
+                      <li>Brand Ambassador</li>
+                      <li>Email Marketing</li>
+                      <li>Newsletters</li>
+                      <li>Project Management</li>
+                      <li>Photo and Video Editing</li>
+                      <li>Interviewing</li>
+                      <li>Canvas</li>
+                      <li>Photoshop</li>
+                      <li>Creative Writing</li>
+                    </ul>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+            <hr id="technical">
+          </div>
+
+          <!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Technical</h2>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <!-- <th scope="row">1</th> -->
+                  <td>Python</td>
+                  <td>SQL</td>
+                  <td>Jupyter Notebook</td>
+                  <td>Javascript</td>
+                </tr>
+                <tr>
+                  <!-- <th scope="row">1</th> -->
+                  <td>Git</td>
+                  <td>Github</td>
+                  <td>Wordpress</td>
+                  <td>HTML</td>
+                </tr>
+              </tbody>
+            </table>
+            <hr id="experience">
+          </div>
+
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Work Experience</h2>
+
+            <blockquote>
+              <big class="pull-right">2016</big>
+              <h2>SIMPLON.CO - PARIS</h2>
+              <h3>Formation Développeur Web (960h)</h3>
+              <p>Formation intensive de 7 mois au développement Back-end PHP.<br>
+Développement Front-end HTML, CSS et Javascript et AngularJs, NodeJs.<br>
+Pouvoir sécuriser les sites Web, détecter les points forts et les points faibles d’un site.</p>
+            </blockquote>
+            <hr>
+
+            <blockquote>
+              <big class="pull-right">2016</big>
+              <h2>KTO TÉLÉ - PARIS (BÉNÉVOLE)</h2>
+              <h3>Consultant en optimisation de site internet.</h3>
+
+            </blockquote>
+            <hr>
+            <blockquote>
+              <big class="pull-right">2002-2014</big>
+              <h2>SYRIAN WEB SOLUTIONS</h2>
+              <h3>Directeur technique et analyste système, Associé et co-fondateur de
+l’entreprise (15 pers.)</h3>
+              <p>Conception de sites Web: rédaction du cahier des charges, des spécifications fonctionnelles et techniques.<br>
+Management des équipes de design et de développement.<br>
+Hébergement et mise en production, optimisation pour les moteurs
+de recherche.<br>
+                </p>
+            </blockquote>
+            <hr id="education">
+          </div>
+
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Education & Extracurriculars</h2>
+            <br>
+            <big class="pull-right"> Sept 2020 - May 2024</big>
+            <h3>Northeastern University</h3>
+            <big class="pull-right"> GPA: 3.7</big>
+            <p>B.S. Data Science
+            </p>
+            <h3>Google Computer Science Research Mentorship Program</h3>
+            <p> Googler-to-student mentorship program that connects students with Googler in field of interest (Health & Bioscience) to discuss pursuit of CS research careers, define a research question and begin the process of pursuing undergraduate research.
+            
+            </p> 
+            <hr>
+
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="blog-footer">
+      <p>Antoine HAMOUI &mdash;<a href="mailto:francis.ana@northeastern.edu"><span style="font-style: italic;">francis.ana@northeastern.edu</span></a>&mdash;
+        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
+        <script type="IN/Share" data-url="https://www.linkedin.com/in/anandamour" data-counter="right"></script>
+        <!--<a href="http://www.linkedin.com/shareArticle?mini=true&url=YOUR-URL&title=YOUR-TITLE&summary=YOUR-SUMMARY">LinkedIn</a>-->
+      </p>
+      <p>
+        <a href="#page-top">Back to top</a>
+      </p>
+    </footer>
+    <div class="bg_load"></div>
+    <div class="wrapper">
+        <div class="inner">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+        </div>
+    </div>
+
+</body>
+</html>
