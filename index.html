@@ -23,59 +23,12 @@
     });
   </script>
 
-  <script>
-    var vid = document.getElementById('bgvid');
-    var pauseButton = document.querySelector('#polina button');
-
-    function vidFade() {
-      vid.classList.add('stopfade');
-    }
-
-    vid.addEventListener('ended', function () {
-      // only functional if "loop" is removed
-      vid.pause();
-
-      // to capture IE10
-      vidFade();
-    });
-
-    pauseButton.addEventListener('click', function () {
-      vid.classList.toggle('stopfade');
-      if (vid.paused) {
-        vid.play();
-        pauseButton.innerHTML = 'Pause';
-      } else {
-        vid.pause();
-        pauseButton.innerHTML = 'Paused';
-      }
-    });
-
-  </script>
 
 </head>
 <style>
   body {
     margin: 0;
     background: #000;
-  }
-
-  video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
-    background-size: cover;
-    transition: 1s opacity;
-  }
-
-  .stopfade {
-    opacity: .5;
   }
 
   #polina {
@@ -128,22 +81,9 @@
     text-decoration: none;
   }
 
-/*
-  @media screen and (max-width: 500px) {
-    div {
-      width: 70%;
-    }
-  }
-*/
 
-  @media screen and (max-device-width: 800px) {
-    html {
-      background: url(Meeting.png) #000 no-repeat center center fixed;
-    }
-    #bgvid {
-      display: none;
-    }
-  }
+
+ 
 
   @import url(https://fonts.googleapis.com/css?family=Racing+Sans+One);
   body {
@@ -322,25 +262,21 @@
     /*text-shadow: 2px 2px gray;*/
     color: #333;
   }
-  /*
- * Override Bootstrap's default container.
- */
+ 
 
   @media (min-width: 1200px) {
     .container {
       width: 970px;
     }
   }
-  /*
- * Masthead for nav
- */
+ 
 
   .blog-masthead {
     background-color: #428bca;
     -webkit-box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
     box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
   }
-  /* Nav links */
+
 
   .blog-nav-item {
     position: relative;
@@ -355,7 +291,7 @@
     color: #fff;
     text-decoration: none;
   }
-  /* Active state gets a caret at the bottom */
+
 
   .blog-nav .active {
     color: #fff;
@@ -374,9 +310,7 @@
     border-bottom: 5px solid;
     border-left: 5px solid transparent;
   }
-  /*
- * Blog name and description
- */
+ 
 
   .blog-header {
     padding-top: 20px;
@@ -394,17 +328,13 @@
     font-size: 20px;
     color: #999;
   }
-  /*
- * Main column and sidebar layout
- */
+
 
   .blog-main {
     font-size: 14px;
     line-height: 1;
   }
 
-  
-  /* Pagination */
 
   .pager {
     margin-bottom: 60px;
@@ -417,9 +347,7 @@
     text-align: center;
     border-radius: 30px;
   }
-  /*
- * Blog posts
- */
+
 
   .blog-post {
     margin-bottom: 60px;
@@ -434,9 +362,7 @@
     margin-bottom: 20px;
     color: #999;
   }
-  /*
- * Footer
- */
+
 
   .blog-footer {
     padding: 40px 0;
@@ -491,9 +417,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-  <video autoplay poster="background.jpg" id="bgvid" loop>
-    <source src="Meeting.mp4" type="video/mp4">
-  </video>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
